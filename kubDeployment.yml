@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pswdmanager-deployment
+  name: todo-app-deployment
   namespace: a 
   labels:
-    app: pswd-manager
+    app: todo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pswd-manager
+      app: todo-app
   template:
     metadata:
       labels:
-        app: pswd-manager
+        app: todo-app
     spec:
       containers:
-      - name: pswd-manager
-        image: passwordmanager:kubectl
+      - name: todo-app
+        image: todo-app:kubectl
         ports:
         - containerPort: 8000
 
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: password-manager-service
+  name: todo-app-service
   namespace: a
 spec:
   selector:
-    app: pswd-manager
+    app: todo-app
   type: NodePort
   ports:
   - protocol: TCP

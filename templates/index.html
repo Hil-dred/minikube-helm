@@ -2,16 +2,23 @@
 <html lang="en">
 
     <head>
-        <title>Simple Password Manager</title>
+        <title>Simple Todo App</title>
     </head>
 
     <body>
      
+        <h1>Welcome to your simple Todo App</h1>
+        
         <form name="search" action="" method="post">
             {% csrf_token %}
-            {{ form }}
+            <b>{{ form }}</b>
             <input type="submit"  value="Submit">
         </form> 
+
+        {% for todo in todos %}.
+        <div style="display: flex; align-items: center;"><h5>Todo:  </h5>  <p> {{ todo }}</p></div>
+        <hr/>
+        {% endfor %}
 
     </body>
 

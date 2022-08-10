@@ -16,13 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic.base import TemplateView
-from . import views
+from . import todos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('auth/', views.auth),
-    path('dashboard/', views.dashboard),
-    path('passwordmanager/', views.create_or_add),
-    path('all/', views.view_all)
+    path('', todos.index),
 ]

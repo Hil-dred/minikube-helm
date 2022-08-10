@@ -1,6 +1,6 @@
 eval $(minikube -p minikube docker-env)
 
-docker build -t passwordmanager:kubectl .
+docker build -t todo-app:kubectl .
 
 kubectl apply -f kubNamespace.yml
 
