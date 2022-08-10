@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.deployment.namespace }}
+  labels:
+    app: {{.Values.deployment.label}}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.deployment.replicas }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: {{.Values.deployment.label}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.deployment.label}}
+    spec:
+      containers:
+        - name: {{.Values.deployment.label}}
+          image: {{.Values.deployment.image}}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
