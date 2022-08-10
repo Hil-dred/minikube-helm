@@ -2,7 +2,7 @@ eval $(minikube -p minikube docker-env)
 
 docker build -t client-go:kubectl .
 
-kubectl apply -f client-go-KubDeploy.yml
+helm install  clientgo-helm clientgo-helm  -f ./clientgo-helm/values.yaml
 
 kubectl config set-context --current --namespace=a
 
