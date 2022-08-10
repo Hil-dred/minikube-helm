@@ -7,9 +7,9 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 8080
+      targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
-      name: 8080
+      nodePort: {{ .Values.service.nodePort }}
   selector:
     {{- include "helm-chart.selectorLabels" . | nindent 4 }}
     app: {{.Values.deployment.label}}

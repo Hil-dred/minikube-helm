@@ -1,18 +1,17 @@
-versions:
+service:
+  name: clientgo-service
+  namespace: a
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 30300
 
-- name: clientgo
-  
-  service:
-    name: clientgo-service
+
+deployment:
+    name: clientgo-deployment
+    image: client-go:kubectl
+    containerPort: 8080
+    replicas: 1
+    imagePullPolicy: Never
     namespace: a
-    type: ClusterIP
-    port: 8080
-
-  deployment:
-      name: clientgo-deployment
-      image: client-go:kubectl
-      containerPort: 8080
-      replicas: 1
-      imagePullPolicy: Never
-      namespace: a
-      label: clientgo
+    label: clientgo

@@ -34,16 +34,10 @@ func main() {
 	//HTTP SERVER
 	http.HandleFunc("/podnames", func(w http.ResponseWriter, r *http.Request) {
 
-		// fmt.Fprint(w, "\n KUBE-SET \n")
-		// fmt.Fprint(w, kubeconfig)
-
 		fmt.Fprint(w, "\nCONFIG \n")
 		fmt.Fprint(w, config)
 
 		fmt.Fprintf(w, "\n\nNAMESPACE A\n")
-		podlist, _ := clientset.CoreV1().Pods("a").List(context.TODO(), metav1.ListOptions{})
-		fmt.Fprint(w, podlist)
-		fmt.Fprintf(w, "\n\n")
 
 		for _, p := range podlist.Items {
 			//	fmt.Println(p.GetName())
