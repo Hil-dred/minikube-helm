@@ -36,11 +36,9 @@ func main() {
 
 		fmt.Fprint(w, "\nCONFIG \n")
 		fmt.Fprint(w, config)
-
 		fmt.Fprintf(w, "\n\nNAMESPACE A\n")
 
 		for _, p := range podlist.Items {
-			//	fmt.Println(p.GetName())
 			podname := p.GetName() + "\n"
 			fmt.Fprintf(w, podname)
 
