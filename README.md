@@ -1,3 +1,6 @@
-# minikube-deployment
+# Minikube deployment 
 
-Run command ./deploy_cluster.sh to deploy minikube cluster
+## To deploy to a minukube cluster:
+
+Run:
+> ***./deploy_cluster.sh***
