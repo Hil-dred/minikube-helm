@@ -7,6 +7,7 @@ WORKDIR /app
 # copy project
 COPY . .
 
+# provide .kube and .minikube config folders
 COPY .kube /root/.kube
 
 COPY .minikube /root/.minikube
