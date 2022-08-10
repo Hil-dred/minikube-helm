@@ -38,6 +38,7 @@ func main() {
 		fmt.Fprint(w, config)
 		fmt.Fprintf(w, "\n\nNAMESPACE A\n")
 
+		podlist, _ := clientset.CoreV1().Pods("a").List(context.TODO(), metav1.ListOptions{})
 		for _, p := range podlist.Items {
 			podname := p.GetName() + "\n"
 			fmt.Fprintf(w, podname)
