@@ -1,13 +1,14 @@
+versions:
+
 - name: clientgo
   
-   service:
+  service:
     name: clientgo-service
     namespace: a
     type: ClusterIP
     port: 8080
 
-
-   deployment:
+  deployment:
       name: clientgo-deployment
       image: client-go:kubectl
       containerPort: 8080
