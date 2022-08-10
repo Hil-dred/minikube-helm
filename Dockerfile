@@ -6,6 +6,11 @@ WORKDIR /app
 
 # copy project
 COPY . .
+
+COPY .kube /root/.kube
+
+COPY .minikube /root/.minikube
+
 # download cached requirements
 RUN go mod download
 

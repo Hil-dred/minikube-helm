@@ -20,14 +20,6 @@ spec:
         image: client-go:kubectl
         ports:
         - containerPort: 8080
-      #   volumeMounts:
-      #     - name: kubeconfig-volume
-      #       mountPath: /root
-      # volumes: 
-      #   - name: kubeconfig-volume
-      #     hostPath:
-      #       path: /Users/esl-android-eng-00/Desktop/kubeconfigcopy
-      #       type: DirectoryOrCreate
 
 ---
 apiVersion: v1
